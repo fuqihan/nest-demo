@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+import "company.proto";
+package user;
+
+service UserService {
+  rpc AddUser (User) returns (Code) {} 
+  rpc FindUser(FindUserArg) returns (UserToCompany) {}
+  rpc FindOneByPhone(Phone) returns (UserToCompany) {}
+  rpc JoinRoom(JoinRoomArg) returns (Code) {}
+  rpc SendMessage(SendMessageArg) returns  (Code) {}
+}
+
+message Code {
+  int32 code = 1;
+  string message = 2;
+}
+
+message SendMessageArg {
+  string room = 1;
+  string type = 2;
+  string userId = 3;
+  string text = 4;
+}
+
+message JoinRoomArg{
+  string userId = 1;
+  string room = 2;
+}
+
+message Phone {
+  string phone = 1;
+}
+
+message FindUser {
+  int32 code = 1;
+  User data = 2;
+  string message = 3;
+}
+
+message Permission {
+  bool entryPage = 1;
+  bool setLocation = 2;
+  bool exportXlsx = 3;
+  bool addUser = 4;
+  bool editUser = 5;
+  bool locationManage = 6;
+  bool checkAttendance = 7;
+  bool setPermission = 8;
+}
+
+message FindUserArg {
+  string phone = 1;
+  string passwd = 2;
+}
+message User {
+  string id = 1;
+  string name = 2;
+  string phone = 3;
+  string dept = 4;
+  string passwd = 5;
+  repeated int32 roles = 6;
+  string company = 7;
+  bool faceRegister = 8;
+  bool companyLocationIschange = 9;
+  string companyLocation = 10;
+  Permission permission = 11;
+}
+
+message UserToCompany {
+  string id = 1;
+  string name = 2;
+  string phone = 3;
+  string dept = 4;
+  string passwd = 5;
+  repeated int32 roles = 6;
+  company.Company company = 7;
+  bool faceRegister = 8;
+  bool companyLocationIschange = 9;
+  string companyLocation = 10;
+  Permission permission = 11;
+}

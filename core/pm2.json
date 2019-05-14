@@ -1,0 +1,14 @@
+{
+  "apps": [{
+    "name": "core",
+    "interpreter": "ts-node",
+    "interpreter_args": "-P ./server -r tsconfig-paths/register",
+    "script": "./src/main.ts",
+    "combine_logs": true,
+    "pid_file": "./logs/app.pid",
+    "log_file": "./logs/all.log",
+    "out_file": "./logs/out.log",
+    "error_file": "./logs/error.log",
+    "log_date_format" : "YYYY-MM-DD HH:mm:ss Z"
+  }]
+}

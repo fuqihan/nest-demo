@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package history;
+
+
+service HistoryService {
+  rpc FindByDate(QueryHistory) returns (History) {}
+  rpc DefaultHistory(DefaultHistoryArg) returns (HistoryArr) {}
+  rpc Daka(DakaArg) returns (Code) {}
+}
+
+message QueryHistory {
+  string phone = 1;
+  int32 year = 2;
+  int32 month = 3;
+  int32 day = 4;
+}
+
+message Code {
+  int32 code = 1;
+  string message = 2;
+}
+
+message DakaArg {
+  string phone = 1;
+  string date = 2;
+  string type = 3;
+  string location = 4;
+}
+
+message DefaultHistoryArg {
+  string phone = 1;
+}
+
+message HistoryArr {  
+  repeated History history = 1;  
+}  
+
+message History {
+  string offLocation = 1;
+  string date = 2;
+  string switchAddr = 3;
+  bool onHour = 4;
+  bool offHour = 5;
+  string switchLocation = 6;
+  string onDate = 7;
+  string offDate = 8;
+  string onLocation = 9;
+}

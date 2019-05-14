@@ -1,0 +1,26 @@
+{
+  "name": "nest-blog",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuqihan/Life-record.git"
+  },
+  "author": "fuqihan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fuqihan/Life-record/issues"
+  },
+  "dependencies": {
+    "@nestjs/mongoose": "^5.2.0",
+    "@types/mongoose": "^5.3.5",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.0.1",
+    "rxjs": "^6.1.0"
+  },
+  "homepage": "https://github.com/fuqihan/Life-record#readme"
+}

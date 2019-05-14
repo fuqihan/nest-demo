@@ -1,0 +1,15 @@
+type Mutation {
+  createCompany(name: String!, dept: [String]!, addr: [Addr]!): Company
+}
+
+type Company {
+    name: String,  
+    # defaultAddr: DefaultAddr
+    # addr: [DefaultAddr]
+    # dept: [String]
+}
+
+input Addr {
+    text: String
+    location: String
+}

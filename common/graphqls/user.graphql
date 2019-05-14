@@ -1,0 +1,13 @@
+type Query {
+  getUser(phone: String!): User
+}
+
+type User {
+    name: String
+    phone: String
+    dept: String
+    company: String
+    faceRegister: Boolean
+    companyLocation: String
+    companyAddr: String
+}

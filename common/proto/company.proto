@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package company;
+
+service CompanyService {
+  rpc AddCompany(Company) returns (Company) {}
+}
+
+message Company {
+  string name = 1;
+  repeated string dept = 2;
+  repeated Addr addr = 3;
+  int32 defaultAddr = 4;
+}
+
+message Addr {
+  string text = 1;
+  string location = 2;
+}

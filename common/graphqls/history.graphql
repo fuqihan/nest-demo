@@ -1,0 +1,25 @@
+type Query {
+  searchHistory(phone: String!, year: Int!,month: Int!,day: Int!): History
+  defaultHistory(phone: String!): [History]
+}
+
+type Mutation {
+  daka(date: String!, phone: String!, type: String!, location: String!): Code
+}
+
+type Code {
+  code: Int
+  message: String
+}
+
+type History {
+  switchLocation: String
+  switchAddr: String
+  onHour: Boolean
+  offHour: Boolean
+  date: String
+  onDate: String
+  offDate: String
+  onLocation: String
+  offLocation: String
+}
